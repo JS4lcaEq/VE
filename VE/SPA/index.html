@@ -3,62 +3,78 @@
 <head>
     <meta charset="UTF-8">
 
-    <!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
-    <link href="lib/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!--<link href="lib/element/element.css" rel="stylesheet" />-->
+
+    <link href="style.css" rel="stylesheet" />
 
     <title>VUE Element</title>
 </head>
 <body>
 
     <div id="app">
-
-        <h1>Hello App!</h1>
-        <p>
-
-            <router-link to="/foo">Go to Foo</router-link>
-            <router-link to="/bar">Go to Bar</router-link>
-        </p>
-
-        <router-view></router-view>
-
-        <hr />
+        <!-- horizontal / vertical -->
+        <el-container direction="vertical" style="background-color:aliceblue; height: 100%;">
+            <el-header style="height:100px; background-color:antiquewhite;">
+                <h1>Hello App!</h1>
 
 
-        <el-button @click="visible = true">Button</el-button>
-        <el-dialog :visible.sync="visible" title="Hello world">
-            <p>Try Element</p>
-        </el-dialog>
+                <router-link to="/foo">Go to Foo</router-link>
+                <router-link to="/bar">Go to Bar</router-link>
 
-        <hr />
-        <el-date-picker v-model="picker"
-                        type="date"
-                        placeholder="дата...">
-        </el-date-picker>
+            </el-header>
+            <el-main>
+                <hr />
+                <router-view></router-view>
 
-        <hr />
+                <hr />
 
-        <my-cmpnnt></my-cmpnnt>
 
+                <el-button @click="visible = true">Button</el-button>
+                <el-dialog :visible.sync="visible" title="Hello world">
+                    <p>Try Element</p>
+                </el-dialog>
+
+                <hr />
+                <el-date-picker v-model="picker"
+                                type="date"
+                                placeholder="дата...">
+                </el-date-picker>
+
+                <hr />
+
+                <my-cmpnnt></my-cmpnnt>
+
+                <hr />
+
+                <!--<async-comp-></async-comp->-->
+            </el-main>
+            <el-footer style="height: 100px; background-color: blueviolet;">
+                footer
+            </el-footer>
+        </el-container>
     </div>
     <script src="lib/jquery-3.3.1.js"></script>
 
     <script src="services/app.js"></script>
-    <script src="services/TemplateService.js"></script>
 
 
-    <!--
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://unpkg.com/element-ui/lib/umd/locale/ru-RU.js"></script>
-    -->
 
+
+    <!--
     <script src="lib/vue/vue.js"></script>
     <script src="lib/vue/vue-router.js"></script>
     <script src="lib/element/element.js"></script>
     <script src="lib/element/element_ru-RU.js"></script>
+    -->
 
     <script src="components/myCmpnnt/myCmpnnt.js"></script>
+
+    <script src="components/async-comp/async-comp-loader.js"></script>
 
     <script>
 

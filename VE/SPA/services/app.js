@@ -5,6 +5,13 @@
     if (!window.app) {
         window.app = {};
     }
+    function addScript(url) {
+        $.ajax({
+            url: url,
+            async: false,
+            dataType: "script"
+        });
+    }
     if (!window.app.services) {
         window.app.services = function (name, fn, injections) {
             if (fn) {
@@ -20,9 +27,11 @@
                 return window.app;
             } else {
                 if (!_servicesFn[name]) {
-                    console.log("App error: call undefined service '" + name + "'!!!");
-                    throw new Error("App error: call undefined service '" + name + "'!!!");
-                    return null;
+                    var url = "services/" + name + ".js";
+                    addScript(url);
+                    //console.log("App error: call undefined service '" + name + "'!!!");
+                    //throw new Error("App error: call undefined service '" + name + "'!!!");
+                    //return null;
                 }
                 if (!_servicesItems[name]) {
                     var args = [];
