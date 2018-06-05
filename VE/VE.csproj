@@ -226,6 +226,10 @@
     <Content Include="SPA\components\async-comp\async-comp-loader.js" />
     <Content Include="SPA\components\myCmpnnt\myCmpnnt.html" />
     <Content Include="SPA\components\myCmpnnt\myCmpnnt.js" />
+    <Content Include="SPA\components\pages\page1\page1Cmpnnt.html" />
+    <Content Include="SPA\components\pages\page1\page1Cmpnnt.js" />
+    <Content Include="SPA\components\UI\confirm\confirmCmpnnt.html" />
+    <Content Include="SPA\components\UI\confirm\confirmCmpnnt.js" />
     <Content Include="SPA\index.html" />
     <Content Include="SPA\lib\element\element.css" />
     <Content Include="SPA\lib\element\element.js" />
@@ -234,6 +238,7 @@
     <Content Include="SPA\lib\vue\vue-router.js" />
     <Content Include="SPA\lib\vue\vue.js" />
     <Content Include="SPA\services\app.js" />
+    <Content Include="SPA\services\store\storeService.js" />
     <Content Include="SPA\services\TemplateService.js" />
     <Content Include="SPA\style.css" />
     <Content Include="Web.config" />
@@ -255,7 +260,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="SPA\components\pages\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -19,8 +19,9 @@
                 <h1>Hello App!</h1>
 
 
-                <router-link to="/foo">Go to Foo</router-link>
-                <router-link to="/bar">Go to Bar</router-link>
+                <router-link to="/foo">Go to Foo</router-link> |
+                <router-link to="/bar">Go to Bar</router-link> |
+                <router-link to="/page1">Page 1</router-link>
 
             </el-header>
             <el-main>
@@ -31,9 +32,14 @@
 
 
                 <el-button @click="visible = true">Button</el-button>
+
+                <!--
                 <el-dialog :visible.sync="visible" title="Hello world">
                     <p>Try Element</p>
                 </el-dialog>
+                -->
+
+                <confirm-cmpnnt></confirm-cmpnnt>
 
                 <hr />
                 <el-date-picker v-model="picker"
@@ -57,7 +63,7 @@
     <script src="lib/jquery-3.3.1.js"></script>
 
     <script src="services/app.js"></script>
-
+    <script src="services/store/storeService.js"></script>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -73,8 +79,9 @@
     -->
 
     <script src="components/myCmpnnt/myCmpnnt.js"></script>
-
     <script src="components/async-comp/async-comp-loader.js"></script>
+    <script src="components/pages/page1/page1Cmpnnt.js"></script>
+    <script src="components/UI/confirm/confirmCmpnnt.js"></script>
 
     <script>
 
@@ -85,7 +92,8 @@
 
         var routes = [
             { path: '/foo', component: Foo },
-            { path: '/bar', component: Bar }
+            { path: '/bar', component: Bar },
+            { path: '/page1', component: Vue.component("page1Cmpnnt") }
         ];
 
         var router = new VueRouter({
